@@ -1,37 +1,39 @@
 # React.js Async Task
 
-[🇧🇷 Trocar para a versão em português](./README.pt-BR.md)
+[🇺🇸 Switch to english version](./README.pt-BR.md)
 
 [![Continuous Integrations](https://github.com/VitorLuizC/react-async-task/actions/workflows/continuous-integrations.yaml/badge.svg?branch=main)](https://github.com/VitorLuizC/react-async-task/actions/workflows/continuous-integrations.yaml)
 [![License](https://badgen.net/github/license/VitorLuizC/react-async-task)](./LICENSE)
 [![Library minified size](https://badgen.net/bundlephobia/min/react-async-task)](https://bundlephobia.com/result?p=react-async-task)
 [![Library minified + gzipped size](https://badgen.net/bundlephobia/minzip/react-async-task)](https://bundlephobia.com/result?p=react-async-task)
 
-## Installation
+React Hooks para gerenciar tarefas assíncronas em componentes React.
 
-This library is published in the NPM registry and can be installed using any compatible package manager.
+## Instalação
+
+Esta biblioteca está publicada no NPM e pode ser instalada usando qualquer gerenciador de pacotes compatível.
 
 ```sh
 npm install react-async-task --save
 
-# For Yarn, use the command below.
+# Para Yarn, use o comando abaixo.
 yarn add react-async-task
 ```
 
-### Installation from CDN
+### Instalação por CDN
 
-This module has an IIFE bundle available through JSDelivr and Unpkg CDNs.
+Os pacotes desse módulo IIFE também estão disponíveis nas CDNs JSDelivr e UNPKG.
 
 ```html
-<!-- For UNPKG use the code below. -->
+<!-- Usando o pacote padrão com o UNPKG -->
 <script src="https://unpkg.com/react-async-task"></script>
 
-<!-- For JSDelivr use the code below. -->
+<!-- Usando o pacote padrão com o JSDelivr -->
 <script src="https://cdn.jsdelivr.net/npm/react-async-task"></script>
 
 <script>
   function useProductList() {
-    // IIFE module is exposed through the "ReactAsyncTask" global variable.
+    // Módulo IIFE está disponível com o objeto global "ReactAsyncTask".
     return ReactAsyncTask.useAsyncTask(fetchProductList);
   }
 
@@ -39,10 +41,9 @@ This module has an IIFE bundle available through JSDelivr and Unpkg CDNs.
 </script>
 ```
 
+## Como usar
 
-## Usage
-
-`react-async-task` provides React Hooks to deal with async tasks in React components. All those Hooks could be imported from package.
+`react-async-task` fornece React Hooks para gerenciar tarefas assíncronas dentro de componentes React. Todos esses Hooks podem ser importados do pacote
 
 ```jsx
 import { useAsyncTask } from 'react-async-task'
@@ -56,9 +57,9 @@ function fetchProductsList() {
 function ProductsList() {
   const { result, pending, error } = useAsyncTask(fetchProductsList);
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <p>Carregando...</p>
 
-  if (error) return <p>An error has occured during products fetch</p>
+  if (error) return <p>Ocorreu um erro durante a busca de produtos</p>
 
   return (
     <ul>
@@ -81,4 +82,4 @@ function ProductsList() {
 
 ## License
 
-Released under [MIT License](./LICENSE).
+Lançado sob a licença [MIT](./LICENSE).
